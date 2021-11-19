@@ -91,6 +91,8 @@ resource "azurerm_availability_set" "app" {
   location            = azurerm_resource_group.app.location
   resource_group_name = azurerm_resource_group.app.name
   managed             = true
+  platform_fault_domain_count  = 2
+  platform_update_domain_count = 2
 
   tags = {
     environment = terraform.workspace
